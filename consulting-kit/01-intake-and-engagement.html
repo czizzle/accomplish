@@ -1,0 +1,470 @@
+<title>AI Readiness Assessment — Engagement &amp; Intake</title>
+<style>
+  :root {
+    --paper:   #F5F2EA;
+    --card:    #FCFAF4;
+    --ink:     #1B2836;
+    --ink-soft:#54626F;
+    --line:    #DCD5C6;
+    --line-2:  #ECE6D8;
+    --navy:    #1E3A5F;
+    --navy-2:  #2C517E;
+    --brass:   #977029;
+    --brass-2: #B78E44;
+    --good:    #2E6E4E;
+    --flag:    #9A5B2A;
+    --shadow:  0 1px 2px rgba(27,40,54,.06), 0 8px 28px rgba(27,40,54,.06);
+
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:   #0F151C;
+      --card:    #161E28;
+      --ink:     #E8EDF2;
+      --ink-soft:#9AA7B4;
+      --line:    #27333F;
+      --line-2:  #1D2731;
+      --navy:    #86AAD6;
+      --navy-2:  #A7C4E6;
+      --brass:   #CDA363;
+      --brass-2: #E0BC81;
+      --good:    #6FB98C;
+      --flag:    #D89457;
+      --shadow:  0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="light"] {
+    --paper:#F5F2EA; --card:#FCFAF4; --ink:#1B2836; --ink-soft:#54626F;
+    --line:#DCD5C6; --line-2:#ECE6D8; --navy:#1E3A5F; --navy-2:#2C517E;
+    --brass:#977029; --brass-2:#B78E44; --good:#2E6E4E; --flag:#9A5B2A;
+    --shadow:0 1px 2px rgba(27,40,54,.06), 0 8px 28px rgba(27,40,54,.06);
+  }
+  :root[data-theme="dark"] {
+    --paper:#0F151C; --card:#161E28; --ink:#E8EDF2; --ink-soft:#9AA7B4;
+    --line:#27333F; --line-2:#1D2731; --navy:#86AAD6; --navy-2:#A7C4E6;
+    --brass:#CDA363; --brass-2:#E0BC81; --good:#6FB98C; --flag:#D89457;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: clamp(20px, 5vw, 60px) clamp(18px, 5vw, 48px) 96px; }
+
+  /* ---- Masthead ---- */
+  .mast { border-bottom: 2px solid var(--navy); padding-bottom: 22px; margin-bottom: 8px; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 0 0 14px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(30px, 5.4vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -.01em;
+    text-wrap: balance;
+    margin: 0 0 14px;
+    color: var(--ink);
+  }
+  .dek {
+    font-size: clamp(16px, 2.3vw, 19px);
+    color: var(--ink-soft);
+    max-width: 60ch;
+    margin: 0;
+  }
+  .mast-meta {
+    display: flex; flex-wrap: wrap; gap: 8px 22px;
+    margin-top: 20px;
+    font-size: 13px; color: var(--ink-soft);
+    font-family: var(--mono);
+  }
+  .mast-meta b { color: var(--ink); font-weight: 600; }
+
+  /* ---- Section framing ---- */
+  section { margin-top: 52px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+  .sec-num {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--brass);
+    font-weight: 600;
+    letter-spacing: .04em;
+    flex: none;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(22px, 3.4vw, 29px);
+    line-height: 1.15;
+    letter-spacing: -.01em;
+    margin: 0;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+  .sec-sub { color: var(--ink-soft); margin: 8px 0 0; max-width: 66ch; }
+  h3 {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .01em;
+    margin: 26px 0 12px;
+    color: var(--ink);
+  }
+  p { margin: 0 0 14px; }
+  a { color: var(--navy-2); text-underline-offset: 2px; }
+
+  /* ---- Process rail ---- */
+  .rail { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 2px; }
+  .rail li {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 16px;
+    padding: 16px 0;
+    border-top: 1px solid var(--line-2);
+  }
+  .rail li:last-child { border-bottom: 1px solid var(--line-2); }
+  .rail .step {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--paper);
+    background: var(--navy);
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-weight: 600;
+    margin-top: 1px;
+  }
+  .rail .t { font-weight: 700; font-size: 15px; }
+  .rail .d { color: var(--ink-soft); font-size: 14.5px; margin-top: 2px; }
+  .rail .tag {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--brass);
+    border: 1px solid var(--line); border-radius: 20px;
+    padding: 2px 9px; margin-left: 8px; white-space: nowrap;
+  }
+
+  /* ---- Callout / regulator note ---- */
+  .note {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--brass);
+    border-radius: 4px;
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    margin: 22px 0;
+  }
+  .note h4 {
+    margin: 0 0 10px; font-size: 14px; font-weight: 700;
+    display: flex; align-items: center; gap: 9px;
+  }
+  .note h4::before {
+    content: ""; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--brass); flex: none;
+  }
+  .note p:last-child { margin-bottom: 0; }
+  .note ul { margin: 8px 0 0; padding-left: 20px; }
+  .note li { margin-bottom: 6px; }
+
+  /* ---- Intake form ---- */
+  .form-sec {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 6px 24px 22px;
+    margin: 18px 0;
+    box-shadow: var(--shadow);
+  }
+  .form-sec > .fs-head {
+    display: flex; align-items: baseline; gap: 12px;
+    padding: 18px 0 14px; margin-bottom: 14px;
+    border-bottom: 1px solid var(--line-2);
+  }
+  .fs-head .fs-num {
+    font-family: var(--mono); font-weight: 700; font-size: 14px; color: var(--brass);
+  }
+  .fs-head h3 { margin: 0; font-family: var(--serif); font-weight: 600; font-size: 20px; }
+  .field { margin-bottom: 16px; }
+  .field:last-child { margin-bottom: 4px; }
+  label.q { display: block; font-size: 14.5px; font-weight: 600; margin-bottom: 7px; color: var(--ink); }
+  label.q .hint { display: block; font-weight: 400; font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+  input[type="text"], textarea {
+    width: 100%;
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 9px 11px;
+  }
+  input[type="text"]:focus, textarea:focus {
+    outline: 2px solid var(--navy-2);
+    outline-offset: 1px;
+    border-color: var(--navy-2);
+  }
+  textarea { min-height: 62px; resize: vertical; line-height: 1.5; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; }
+  @media (max-width: 560px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  .opts { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 4px; }
+  .opt {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 14.5px; color: var(--ink);
+    cursor: pointer;
+  }
+  .opt input { width: 16px; height: 16px; accent-color: var(--navy); flex: none; }
+
+  /* ---- Assessment dimensions ---- */
+  .dims { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+  @media (max-width: 620px) { .dims { grid-template-columns: 1fr; } }
+  .dim {
+    border: 1px solid var(--line); border-radius: 7px;
+    background: var(--card); padding: 16px 18px;
+    box-shadow: var(--shadow);
+  }
+  .dim .n { font-family: var(--mono); font-size: 12px; color: var(--brass); letter-spacing: .06em; }
+  .dim .h { font-weight: 700; font-size: 15.5px; margin: 4px 0 5px; }
+  .dim p { font-size: 14px; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Deliverable list ---- */
+  .deliv { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 10px; }
+  .deliv li {
+    display: grid; grid-template-columns: 22px 1fr; gap: 12px;
+    font-size: 15px;
+  }
+  .deliv li::before {
+    content: "▪"; color: var(--brass); font-size: 15px; line-height: 1.5;
+  }
+
+  hr.rule { border: none; border-top: 1px solid var(--line); margin: 0; }
+  .foot {
+    margin-top: 60px; padding-top: 22px; border-top: 2px solid var(--navy);
+    font-size: 13px; color: var(--ink-soft);
+  }
+  .foot b { color: var(--ink); }
+
+  @media print {
+    body { background: #fff; }
+    .form-sec, .note, .dim { box-shadow: none; break-inside: avoid; }
+    section { break-inside: avoid-page; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="mast">
+    <p class="eyebrow">Independent Advisory · Community Banking</p>
+    <h1>AI Readiness Assessment</h1>
+    <p class="dek">A one-time, flat-fee diagnostic of a community bank's technology, data, governance, and staff — the equivalent of a home inspection before you commit to building anything. You leave with a written findings report and a prioritized roadmap, not a sales pitch.</p>
+    <div class="mast-meta">
+      <span>Prepared for <b>Collins State Bank</b></span>
+      <span>Engagement type <b>Diagnostic · Flat fee</b></span>
+      <span>Deliverable <b>Written report + read-out</b></span>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>The idea, in one paragraph</h2></div>
+    <p class="sec-sub">Banks are being told they "need an AI strategy" by every vendor and consultant in the market. Most of that noise skips the first, unglamorous step: honestly assessing what the bank already has, what it's allowed to do with its data, and where the real time is being lost. That's the inspection. You're not selling software — you're telling Ben the truth about the house before anyone spends money on renovations.</p>
+    <div class="note">
+      <h4>Why you're the right inspector</h4>
+      <p>You've sat in the credit shop. You know what spreading a financial statement, writing a credit memo, and prepping for an exam actually take. That means you can spot where AI saves real hours versus where it's a toy — and you can speak to a bank president in his own language. Most "AI consultants" can't tell a call report from a call center.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>How the engagement runs</h2></div>
+    <p class="sec-sub">Keep it tight and bounded so the flat fee stays a flat fee. Everything below fits comfortably in two to three weeks of part-time work.</p>
+    <ol class="rail">
+      <li><span class="step">1</span><div><span class="t">Scoping call</span><span class="tag">Free</span><div class="d">30–45 minutes with Ben. Confirm what "done" looks like, agree the fee and timeline, and rule the scope <em>out</em> of implementation. You're inspecting, not building — yet.</div></div></li>
+      <li><span class="step">2</span><div><span class="t">Engagement letter + mutual NDA</span><span class="tag">Before any data</span><div class="d">Banks live and die on confidentiality. A short engagement letter (scope, fee, what you will and won't deliver, a limitation-of-liability clause) plus a mutual NDA protects both of you and signals you're a professional.</div></div></li>
+      <li><span class="step">3</span><div><span class="t">Intake form + document request</span><div class="d">Send the form below. Alongside it, request a light document pack: org chart, current vendor list, any existing tech/acceptable-use or AI policy, last IT exam summary (findings only), and a systems inventory.</div></div></li>
+      <li><span class="step">4</span><div><span class="t">Discovery interviews</span><div class="d">Short conversations with 4–6 people: Ben, the ops/IT lead, a lender, a BSA/compliance person, a front-line staffer. This is where you find the shadow AI and the real pain.</div></div></li>
+      <li><span class="step">5</span><div><span class="t">Assessment &amp; scoring</span><div class="d">Score the bank across the six readiness dimensions below. Map opportunities against effort and risk.</div></div></li>
+      <li><span class="step">6</span><div><span class="t">Written report + read-out</span><span class="tag">The deliverable</span><div class="d">A findings report and a live presentation to Ben (and the board or IT steering committee if he wants). Ends with a prioritized roadmap and a clear "if you want help doing this, here's a separate proposal."</div></div></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Sorting out "Fiserv or FDIC or OCC"</h2></div>
+    <p class="sec-sub">These are three different things that get jumbled together. Getting them straight is part of what makes you credible in the room — and it changes what the bank is allowed to do.</p>
+
+    <div class="note">
+      <h4>Who regulates them (not the same as who insures them)</h4>
+      <p>A bank named "<b>Collins State Bank</b>" is almost certainly <b>state-chartered in Wisconsin</b>. That means:</p>
+      <ul>
+        <li><b>Wisconsin DFI</b> (Department of Financial Institutions, Division of Banking) — the state chartering regulator.</li>
+        <li>Plus one federal regulator, depending on Fed membership: <b>FDIC</b> if it's a state non-member bank (the common case for community banks), or the <b>Federal Reserve</b> if it's a state member bank.</li>
+        <li><b>OCC</b> only regulates <em>national</em> banks — the ones with "National" or "N.A." in the name. A "State Bank" is not OCC-supervised. So it's very likely <b>FDIC + Wisconsin DFI</b>, not OCC.</li>
+      </ul>
+      <p style="margin-top:10px">Separately, <b>FDIC insurance</b> is the deposit insurance nearly every bank carries regardless of who its primary regulator is — that's why "FDIC" gets used as a catch-all. On the intake form you'll simply ask them to confirm charter type and primary federal regulator rather than guess.</p>
+    </div>
+
+    <h3>Fiserv is the core — a completely different question</h3>
+    <p>Fiserv (you had it as "Fieerv"), Jack Henry, and FIS are the three big <b>core processors</b> — the system of record that runs accounts, loans, and the general ledger. A Wisconsin community bank is most likely on <b>Fiserv</b> (Premier, Precision, or Signature) or <b>Jack Henry</b> (SilverLake, CIF 20/20, Core Director). The single most important thing to learn is whether the core is <b>vendor-hosted / service bureau</b> or <b>in-house</b> — it dictates what data can move and what's even technically possible.</p>
+
+    <h3>The compliance backdrop you'll reference in the report</h3>
+    <p>You don't need to be a compliance officer, but naming these shows the bank you understand their guardrails: the <b>Interagency Guidance on Third-Party Relationships</b> (FDIC/OCC/Fed, 2023) for any vendor, <b>GLBA / the Safeguards Rule</b> for customer data, the <b>FFIEC IT Handbook</b>, fair-lending rules (<b>ECOA / Reg B</b>) the moment AI touches a credit decision, and <b>BSA/AML</b> if it touches monitoring. The <b>NIST AI Risk Management Framework</b> is a good neutral backbone for the whole report.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>The intake form</h2></div>
+    <p class="sec-sub">This is the working draft to send once the NDA is signed. It's built to be filled in by Ben and one or two staff in under an hour. Edit freely — treat it as a v1 checklist, not scripture.</p>
+
+    <div class="form-sec">
+      <div class="fs-head"><span class="fs-num">A</span><h3>Bank profile</h3></div>
+      <div class="grid-2">
+        <div class="field"><label class="q">Legal name &amp; primary location</label><input type="text"></div>
+        <div class="field"><label class="q">Holding company (if any)</label><input type="text"></div>
+        <div class="field"><label class="q">Total assets (approx.)</label><input type="text"></div>
+        <div class="field"><label class="q"># of branches</label><input type="text"></div>
+        <div class="field"><label class="q">Total employees / FTEs</label><input type="text"></div>
+        <div class="field"><label class="q">Primary lines of business</label><input type="text" placeholder="e.g. ag, commercial, consumer, mortgage"></div>
+      </div>
+    </div>
+
+    <div class="form-sec">
+      <div class="fs-head"><span class="fs-num">B</span><h3>Charter &amp; regulators</h3></div>
+      <div class="field">
+        <label class="q">Charter type</label>
+        <div class="opts">
+          <label class="opt"><input type="checkbox">State-chartered</label>
+          <label class="opt"><input type="checkbox">National</label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="q">Primary federal regulator</label>
+        <div class="opts">
+          <label class="opt"><input type="checkbox">FDIC</label>
+          <label class="opt"><input type="checkbox">Federal Reserve</label>
+          <label class="opt"><input type="checkbox">OCC</label>
+          <label class="opt"><input type="checkbox">Not sure</label>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="field"><label class="q">State regulator</label><input type="text" placeholder="e.g. Wisconsin DFI – Division of Banking"></div>
+        <div class="field"><label class="q">Approx. date of last IT / safety-and-soundness exam</label><input type="text"></div>
+      </div>
+      <div class="field"><label class="q">Any open exam findings, MRAs, or vendor-management concerns relevant to technology?<span class="hint">Summary only — no confidential detail needed at this stage.</span></label><textarea></textarea></div>
+    </div>
+
+    <div class="form-sec">
+      <div class="fs-head"><span class="fs-num">C</span><h3>Technology stack</h3></div>
+      <div class="grid-2">
+        <div class="field"><label class="q">Core processor &amp; product</label><input type="text" placeholder="e.g. Fiserv Premier, Jack Henry SilverLake"></div>
+        <div class="field"><label class="q">Core hosting model</label><input type="text" placeholder="Vendor-hosted / service bureau or in-house"></div>
+        <div class="field"><label class="q">Digital / online &amp; mobile banking</label><input type="text" placeholder="e.g. Q2, Alkami, Banno"></div>
+        <div class="field"><label class="q">Loan origination system</label><input type="text" placeholder="e.g. nCino, Baker Hill, Abrigo"></div>
+        <div class="field"><label class="q">BSA / AML / fraud monitoring</label><input type="text" placeholder="e.g. Verafin, Abrigo"></div>
+        <div class="field"><label class="q">Document management / imaging</label><input type="text"></div>
+        <div class="field"><label class="q">Office / email suite</label><input type="text" placeholder="Microsoft 365 or Google Workspace"></div>
+        <div class="field"><label class="q">CRM (if any)</label><input type="text"></div>
+      </div>
+      <div class="field"><label class="q">Is IT run in-house, by a managed provider (MSP), or a mix?</label><input type="text"></div>
+    </div>
+
+    <div class="form-sec">
+      <div class="fs-head"><span class="fs-num">D</span><h3>Data &amp; security posture</h3></div>
+      <div class="field">
+        <label class="q">Where does most customer data physically live?</label>
+        <div class="opts">
+          <label class="opt"><input type="checkbox">On-premise servers</label>
+          <label class="opt"><input type="checkbox">Vendor cloud</label>
+          <label class="opt"><input type="checkbox">Mix</label>
+          <label class="opt"><input type="checkbox">Not sure</label>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="field"><label class="q">Is there a written information security / GLBA program?</label><input type="text" placeholder="Yes / No / Not sure"></div>
+        <div class="field"><label class="q">Named CISO or security lead?</label><input type="text"></div>
+      </div>
+      <div class="field"><label class="q">Any data classification or governance already in place?<span class="hint">e.g. rules about what data can leave the bank's environment.</span></label><textarea></textarea></div>
+    </div>
+
+    <div class="form-sec">
+      <div class="fs-head"><span class="fs-num">E</span><h3>Current AI use &amp; policy</h3></div>
+      <div class="field">
+        <label class="q">Are staff already using AI tools (ChatGPT, Copilot, etc.), officially or unofficially?</label>
+        <div class="opts">
+          <label class="opt"><input type="checkbox">Yes, sanctioned</label>
+          <label class="opt"><input type="checkbox">Yes, informally</label>
+          <label class="opt"><input type="checkbox">No</label>
+          <label class="opt"><input type="checkbox">Don't know</label>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="field"><label class="q">Any AI or acceptable-use policy in place?</label><input type="text" placeholder="Yes / No / In draft"></div>
+        <div class="field"><label class="q">Has the board or a committee discussed AI?</label><input type="text"></div>
+      </div>
+      <div class="field"><label class="q">Does the current core or ancillary software already include AI features you're paying for?<span class="hint">Many vendors have quietly added them — worth knowing before buying anything new.</span></label><textarea></textarea></div>
+    </div>
+
+    <div class="form-sec">
+      <div class="fs-head"><span class="fs-num">F</span><h3>Pain points &amp; goals</h3></div>
+      <div class="field"><label class="q">Where does staff time disappear? Name the 3–5 most manual, repetitive tasks.</label><textarea></textarea></div>
+      <div class="field"><label class="q">If you could wave a wand and fix one operational headache this year, what is it?</label><textarea></textarea></div>
+      <div class="field"><label class="q">Growth or staffing pressures shaping the next 12–24 months?</label><textarea></textarea></div>
+    </div>
+
+    <div class="form-sec">
+      <div class="fs-head"><span class="fs-num">G</span><h3>People, governance &amp; logistics</h3></div>
+      <div class="grid-2">
+        <div class="field"><label class="q">Executive sponsor for this work</label><input type="text"></div>
+        <div class="field"><label class="q">Who ultimately signs off on new technology?</label><input type="text"></div>
+        <div class="field"><label class="q">General comfort level with technology, front line to board</label><input type="text" placeholder="Low / Mixed / High"></div>
+        <div class="field"><label class="q">How did the last significant tech rollout go?</label><input type="text"></div>
+        <div class="field"><label class="q">Primary point of contact for this engagement</label><input type="text"></div>
+        <div class="field"><label class="q">Target timeline / any hard dates</label><input type="text"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">05</span><h2>What you actually score</h2></div>
+    <p class="sec-sub">The report rates the bank across six dimensions — this is the backbone that turns a pile of intake answers into a defensible finding. A simple 1–5 per dimension is plenty.</p>
+    <div class="dims">
+      <div class="dim"><span class="n">I</span><div class="h">Data &amp; infrastructure</div><p>Where data lives, hosting model, what's allowed to leave the building.</p></div>
+      <div class="dim"><span class="n">II</span><div class="h">Technology fit</div><p>Core and ancillary systems, existing AI features, integration surface.</p></div>
+      <div class="dim"><span class="n">III</span><div class="h">Security &amp; compliance</div><p>GLBA program, third-party risk maturity, fair-lending and BSA exposure.</p></div>
+      <div class="dim"><span class="n">IV</span><div class="h">People &amp; change readiness</div><p>Sponsor, staff comfort, track record with new tools.</p></div>
+      <div class="dim"><span class="n">V</span><div class="h">Governance</div><p>Who decides, board awareness, existing AI / acceptable-use policy.</p></div>
+      <div class="dim"><span class="n">VI</span><div class="h">Opportunity value</div><p>Where hours and dollars are genuinely recoverable — the payoff map.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">06</span><h2>What Ben walks away with</h2></div>
+    <ul class="deliv">
+      <li>A plain-English <b>current-state findings report</b> — strengths, gaps, and the shadow-AI reality.</li>
+      <li>A <b>readiness scorecard</b> across the six dimensions above.</li>
+      <li>A <b>prioritized opportunity roadmap</b> — quick wins (low-risk internal productivity) separated from strategic bets (anything touching credit decisions or customer data).</li>
+      <li>A short <b>guardrails recommendation</b> — the AI / acceptable-use policy the bank should have before staff go further.</li>
+      <li>A <b>vendor-landscape snapshot</b> — build vs. buy vs. use-what-you-already-own.</li>
+      <li>An optional <b>next-step proposal</b> for implementation — priced separately, so the inspection stays honest.</li>
+    </ul>
+    <div class="note" style="margin-top:26px">
+      <h4>Two things to protect yourself</h4>
+      <p><b>Scope creep &amp; liability.</b> Keep the flat fee tied to the diagnostic only, and put a line in the engagement letter clarifying you're providing advisory recommendations — not legal, compliance, or accounting opinions — and that the bank remains responsible for regulatory decisions. Ask your insurer about professional-liability (E&amp;O) cover before the first paid engagement. Being Ben's former colleague is trust capital; a clean paper trail keeps it that way.</p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p><b>Working draft.</b> Built as a starting point for the Collins State Bank conversation — every section is meant to be cut, reordered, or expanded to fit how you want to run it.</p>
+  </footer>
+
+</div>

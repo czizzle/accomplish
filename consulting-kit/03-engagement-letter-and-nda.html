@@ -1,0 +1,167 @@
+<title>Engagement Letter &amp; Mutual NDA — Templates</title>
+<style>
+  :root{
+    --paper:#F5F2EA;--card:#FCFAF4;--ink:#1B2836;--ink-soft:#54626F;
+    --line:#DCD5C6;--line-2:#ECE6D8;--navy:#1E3A5F;--navy-2:#2C517E;
+    --brass:#977029;--warn-bg:#FBF1DE;--warn-line:#C79A3E;--warn-ink:#6B4E14;
+    --shadow:0 1px 2px rgba(27,40,54,.06),0 8px 28px rgba(27,40,54,.06);
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono","SFMono-Regular",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--paper:#0F151C;--card:#161E28;--ink:#E8EDF2;--ink-soft:#9AA7B4;
+      --line:#27333F;--line-2:#1D2731;--navy:#86AAD6;--navy-2:#A7C4E6;--brass:#CDA363;
+      --warn-bg:#241C0C;--warn-line:#C79A3E;--warn-ink:#E7C57E;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);}
+  }
+  :root[data-theme="light"]{--paper:#F5F2EA;--card:#FCFAF4;--ink:#1B2836;--ink-soft:#54626F;--line:#DCD5C6;--line-2:#ECE6D8;--navy:#1E3A5F;--navy-2:#2C517E;--brass:#977029;--warn-bg:#FBF1DE;--warn-line:#C79A3E;--warn-ink:#6B4E14;--shadow:0 1px 2px rgba(27,40,54,.06),0 8px 28px rgba(27,40,54,.06);}
+  :root[data-theme="dark"]{--paper:#0F151C;--card:#161E28;--ink:#E8EDF2;--ink-soft:#9AA7B4;--line:#27333F;--line-2:#1D2731;--navy:#86AAD6;--navy-2:#A7C4E6;--brass:#CDA363;--warn-bg:#241C0C;--warn-line:#C79A3E;--warn-ink:#E7C57E;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);}
+
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:780px;margin:0 auto;padding:clamp(20px,5vw,52px) clamp(18px,5vw,44px) 90px;}
+
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);margin:0 0 12px;}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(26px,4.6vw,38px);line-height:1.1;letter-spacing:-.01em;text-wrap:balance;margin:0 0 10px;}
+  .sub{color:var(--ink-soft);margin:0;}
+
+  .warn{background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:8px;padding:16px 18px;margin:22px 0 8px;display:grid;grid-template-columns:24px 1fr;gap:12px;}
+  .warn .ic{font-size:18px;line-height:1.2;}
+  .warn p{margin:0;font-size:14px;color:var(--warn-ink);}
+  .warn b{color:var(--warn-ink);}
+
+  .doc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:clamp(22px,4vw,40px);margin-top:30px;box-shadow:var(--shadow);}
+  .doc-tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin:0 0 6px;}
+  .doc h2{font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.4vw,27px);margin:0 0 4px;line-height:1.15;}
+  .doc .meta{color:var(--ink-soft);font-size:13.5px;margin:0 0 20px;}
+  .doc h3{font-family:var(--sans);font-size:13.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--navy-2);margin:26px 0 8px;display:flex;gap:10px;}
+  .doc h3 .cl{font-family:var(--mono);color:var(--brass);}
+  .doc p{margin:0 0 12px;}
+  .doc p.party{margin-bottom:6px;}
+  mark{background:transparent;color:var(--navy-2);font-weight:600;font-family:var(--mono);font-size:.92em;}
+  .fine{font-size:13.5px;color:var(--ink-soft);}
+  ol.clauses{margin:0;padding-left:20px;}
+  ol.clauses>li{margin-bottom:12px;padding-left:4px;}
+  ul.plain{margin:6px 0 12px;padding-left:20px;}
+  ul.plain li{margin-bottom:5px;}
+
+  .sign{margin-top:30px;padding-top:22px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+  @media (max-width:560px){.sign{grid-template-columns:1fr;}}
+  .sig .line{height:30px;border-bottom:1.5px solid var(--ink);margin-bottom:8px;}
+  .sig .who{font-weight:700;font-size:14px;}
+  .sig .role{color:var(--ink-soft);font-size:13px;}
+  .sig .dt{color:var(--ink-soft);font-size:12.5px;margin-top:10px;}
+
+  hr.sep{border:none;border-top:1px dashed var(--line);margin:0;}
+  .foot{margin-top:48px;padding-top:18px;border-top:2px solid var(--navy);font-size:13px;color:var(--ink-soft);}
+  @media print{body{background:#fff;}.doc{box-shadow:none;break-inside:avoid;border:none;padding:0;}.warn{break-inside:avoid;}.doc+.doc{break-before:page;}}
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">Consulting Paperwork · Templates</p>
+  <h1>Engagement Letter &amp; Mutual NDA</h1>
+  <p class="sub">Two fill-in-the-blank templates to pair with the proposal. Replace every <mark>[bracketed]</mark> field before sending.</p>
+
+  <div class="warn">
+    <div class="ic">⚠️</div>
+    <p><b>These are drafting templates, not legal advice.</b> An engagement with a bank carries real confidentiality and liability stakes. Before you use these with Collins State Bank, have a <b>Wisconsin-licensed attorney</b> review both documents — especially the limitation-of-liability and confidentiality terms. The one-time cost of a lawyer's read is small insurance on your first banking engagement, and the bank's own counsel will expect it.</p>
+  </div>
+
+  <!-- ============ ENGAGEMENT LETTER ============ -->
+  <div class="doc">
+    <p class="doc-tag">Document 1 of 2</p>
+    <h2>Consulting Engagement Letter</h2>
+    <p class="meta">Dated <mark>[Month Day, Year]</mark></p>
+
+    <p class="party"><b>Between:</b> <mark>[Your Name / Your Firm, LLC]</mark> (the "Consultant")</p>
+    <p class="party"><b>And:</b> Collins State Bank, <mark>[City]</mark>, Wisconsin (the "Bank" or "Client")</p>
+    <p class="fine">This letter sets out the terms on which the Consultant will provide the services described below. It becomes effective when signed by both parties.</p>
+
+    <h3><span class="cl">1.</span> Scope of services</h3>
+    <p>The Consultant will perform a one-time <b>AI Readiness Assessment</b> — a diagnostic review of the Bank's technology, data environment, governance, and operations to identify opportunities and risks related to the adoption of artificial-intelligence tools. Services comprise:</p>
+    <ul class="plain">
+      <li>A structured intake and review of documents the Bank provides;</li>
+      <li>Discovery interviews with up to <mark>[six]</mark> Bank personnel;</li>
+      <li>A readiness assessment scored across six defined dimensions;</li>
+      <li>A written findings report and prioritized roadmap; and</li>
+      <li>One live read-out presentation to Bank leadership.</li>
+    </ul>
+    <p class="fine"><em>[If the "Inspection + Guardrails" option is selected, add: a drafted AI/acceptable-use policy and a board-level presentation.]</em></p>
+
+    <h3><span class="cl">2.</span> Out of scope</h3>
+    <p>This engagement is advisory and diagnostic only. It does not include implementing, building, configuring, or deploying any system, and it does not constitute legal, regulatory, compliance, accounting, or tax advice. The Bank remains solely responsible for its own business, technology, and regulatory decisions. Any implementation work will be the subject of a separate written agreement.</p>
+
+    <h3><span class="cl">3.</span> Fees &amp; payment</h3>
+    <p>The Bank will pay a fixed fee of <mark>[$7,500 / $10,000]</mark> for the services, which does not vary with hours worked. Payment terms: <b>50% (<mark>[$3,750 / $5,000]</mark>) due on signing</b> as a deposit to commence work, and the <b>remaining 50% due within <mark>[15]</mark> days of delivery</b> of the written report. Reasonable pre-approved out-of-pocket expenses, if any, will be billed at cost.</p>
+
+    <h3><span class="cl">4.</span> Timeline</h3>
+    <p>The Consultant will deliver the report within approximately <mark>[two to three weeks]</mark> of receiving the signed letter, the deposit, and the Bank's requested documents, subject to the timely availability of Bank personnel for interviews.</p>
+
+    <h3><span class="cl">5.</span> Client responsibilities</h3>
+    <p>The Bank will provide timely access to the personnel, systems information, and documents reasonably needed to perform the services, and will designate <mark>[name / title]</mark> as the primary point of contact. Delays in access may extend the timeline.</p>
+
+    <h3><span class="cl">6.</span> Confidentiality</h3>
+    <p>The parties' obligations regarding confidential information are governed by the Mutual Nondisclosure Agreement executed alongside this letter, which is incorporated by reference.</p>
+
+    <h3><span class="cl">7.</span> Work product &amp; ownership</h3>
+    <p>Upon receipt of full payment, the Bank owns the final written report and deliverables prepared specifically for it. The Consultant retains ownership of its own pre-existing methods, templates, frameworks, and general know-how, and may use the general knowledge and experience gained in performing the services.</p>
+
+    <h3><span class="cl">8.</span> Limitation of liability</h3>
+    <p>The services and deliverables are provided on a best-efforts, good-faith basis. To the maximum extent permitted by law, the Consultant's total aggregate liability arising out of or relating to this engagement will not exceed the total fees actually paid to the Consultant, and the Consultant will not be liable for any indirect, incidental, consequential, or lost-profits damages. Recommendations are informational; the Bank is responsible for evaluating and deciding whether to act on them.</p>
+
+    <h3><span class="cl">9.</span> Independent contractor</h3>
+    <p>The Consultant is an independent contractor, not an employee, partner, or agent of the Bank. The Consultant is responsible for its own taxes, insurance, and expenses, and carries its own professional-liability coverage.</p>
+
+    <h3><span class="cl">10.</span> Term &amp; termination</h3>
+    <p>Either party may terminate this engagement on <mark>[ten]</mark> days' written notice. On termination, the Bank will pay for services performed through the termination date, and the deposit is non-refundable to the extent work has commenced.</p>
+
+    <h3><span class="cl">11.</span> Governing law</h3>
+    <p>This letter is governed by the laws of the State of Wisconsin, without regard to its conflict-of-laws rules.</p>
+
+    <div class="sign">
+      <div class="sig"><div class="line"></div><div class="who"><mark>[Your Name]</mark></div><div class="role"><mark>[Your Firm]</mark>, Consultant</div><div class="dt">Date: ____________________</div></div>
+      <div class="sig"><div class="line"></div><div class="who">Ben <mark>[Last Name]</mark></div><div class="role">President, Collins State Bank</div><div class="dt">Date: ____________________</div></div>
+    </div>
+  </div>
+
+  <!-- ============ NDA ============ -->
+  <div class="doc">
+    <p class="doc-tag">Document 2 of 2</p>
+    <h2>Mutual Nondisclosure Agreement</h2>
+    <p class="meta">Dated <mark>[Month Day, Year]</mark></p>
+
+    <p class="party">This Mutual Nondisclosure Agreement (the "Agreement") is entered into between <mark>[Your Name / Your Firm, LLC]</mark> and Collins State Bank (each a "Party" and together the "Parties") to protect confidential information exchanged in connection with a prospective and actual consulting engagement (the "Purpose").</p>
+
+    <ol class="clauses">
+      <li><b>Confidential Information.</b> "Confidential Information" means non-public information disclosed by one Party (the "Discloser") to the other (the "Recipient"), whether oral, written, or electronic, that is marked confidential or that a reasonable person would understand to be confidential given its nature or the circumstances. It expressly includes the Bank's customer and account information, financial data, systems and vendor details, security information, policies, and examination-related materials.</li>
+
+      <li><b>Obligations.</b> The Recipient will (a) use Confidential Information solely for the Purpose; (b) protect it with at least the same care it uses for its own confidential information, and no less than a reasonable standard of care; and (c) not disclose it to any third party without the Discloser's prior written consent, except to the Recipient's personnel or advisors who need it for the Purpose and are bound by confidentiality obligations at least as protective as these.</li>
+
+      <li><b>Exclusions.</b> Confidential Information does not include information that (a) is or becomes public through no fault of the Recipient; (b) was rightfully known to the Recipient before disclosure; (c) is rightfully obtained from a third party without a duty of confidentiality; or (d) is independently developed without use of the Confidential Information.</li>
+
+      <li><b>Compelled disclosure.</b> If legally compelled to disclose Confidential Information (including to a bank regulator), the Recipient may do so, provided it gives the Discloser prompt written notice where legally permitted and discloses only what is required.</li>
+
+      <li><b>Nonpublic personal information.</b> The Consultant acknowledges that the Bank is subject to the Gramm-Leach-Bliley Act and its Safeguards Rule, and agrees to handle any nonpublic personal information of the Bank's customers accordingly, and to not retain such information beyond what is necessary for the Purpose.</li>
+
+      <li><b>No license.</b> Nothing in this Agreement grants either Party any right or license in the other's Confidential Information or intellectual property, except the limited right to use it for the Purpose.</li>
+
+      <li><b>Return or destruction.</b> On the Discloser's written request or on completion of the Purpose, the Recipient will return or securely destroy the Confidential Information in its possession, except one archival copy retained solely for legal-compliance purposes.</li>
+
+      <li><b>Term.</b> This Agreement applies to Confidential Information exchanged for <mark>[two (2) years]</mark> from the date above, and the confidentiality obligations survive for <mark>[three (3) years]</mark> after disclosure — or, for customer nonpublic personal information and trade secrets, for as long as the information remains protected under applicable law.</li>
+
+      <li><b>Remedies.</b> The Parties agree that a breach may cause irreparable harm for which monetary damages are inadequate, and that the non-breaching Party may seek injunctive relief in addition to other available remedies.</li>
+
+      <li><b>Governing law.</b> This Agreement is governed by the laws of the State of Wisconsin, without regard to its conflict-of-laws rules.</li>
+    </ol>
+
+    <div class="sign">
+      <div class="sig"><div class="line"></div><div class="who"><mark>[Your Name]</mark></div><div class="role"><mark>[Your Firm]</mark></div><div class="dt">Date: ____________________</div></div>
+      <div class="sig"><div class="line"></div><div class="who">Ben <mark>[Last Name]</mark></div><div class="role">President, Collins State Bank</div><div class="dt">Date: ____________________</div></div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <p><b>Templates only.</b> Fill every bracketed field, delete the guidance notes in italics, and have Wisconsin counsel review before signing. Provided as a drafting aid, not as legal advice.</p>
+  </footer>
+</div>
